@@ -51,12 +51,12 @@ function IsAuthorized(doorID)
 end
 ```
 
-Required Resources:
+# Required Resources:
 
-Ballas Interior - https://github.com/TRANEdAK1nG/Ballas-Interior
-TheFamily Interior - https://github.com/TRANEdAK1nG/Famillies-Interior
-Vagos Interior - https://github.com/TRANEdAK1nG/Vagos-Interior
-Marabunta Interior - https://github.com/TRANEdAK1nG/Marabunta-Interior
-Warmenu - https://github.com/warxander/warmenu
-Script Author : SBRULEZ#6969
-Modifications by: Mojito#4595 and Toddyym#8296
+- Ballas Interior - https://github.com/TRANEdAK1nG/Ballas-Interior
+- TheFamily Interior - https://github.com/TRANEdAK1nG/Famillies-Interior
+- Vagos Interior - https://github.com/TRANEdAK1nG/Vagos-Interior
+- Marabunta Interior - https://github.com/TRANEdAK1nG/Marabunta-Interior
+- Warmenu - https://github.com/warxander/warmenu
+- Script Author : SBRULEZ#6969
+- Modifications by: Mojito#4595 and Toddyym#8296
