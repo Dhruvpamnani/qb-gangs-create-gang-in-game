@@ -11,6 +11,7 @@ Keys = {
 
 Config = Config or {}
 
+-- Index of this array is the PlayerGang.name
 Config.Locations = {
     ["ballas"] = {
         ["VehicleSpawner"] = {
