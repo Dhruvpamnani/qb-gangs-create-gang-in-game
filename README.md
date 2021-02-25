@@ -1,5 +1,5 @@
 # qb-gangs
-OG-Gangs for QB-Core with Gang Support instead of Jobs.
+Gangs for QB-Core with Gang Support instead of Jobs, supports infinately scaling gangs. Super optimised down to 0.01ms with a gang, 0.00ms as a civilian.
 
 # Features:
 
@@ -11,7 +11,7 @@ Instructions:
 Add Gangs into qb-core/shared.lua like this:
 ```lua
 QBShared.Gangs = {
-	["geen"] = {
+	["none"] = {
 		label = "No Gang"
 	},
 	["ballas"] = {
@@ -51,10 +51,9 @@ function IsAuthorized(doorID)
 end
 ```
 
-# Required Resources:
+# Interiors used:
 
 - Ballas Interior - https://github.com/TRANEdAK1nG/Ballas-Interior
 - TheFamily Interior - https://github.com/TRANEdAK1nG/Famillies-Interior
 - Vagos Interior - https://github.com/TRANEdAK1nG/Vagos-Interior
 - Marabunta Interior - https://github.com/TRANEdAK1nG/Marabunta-Interior
-- Warmenu - https://github.com/warxander/warmenu
