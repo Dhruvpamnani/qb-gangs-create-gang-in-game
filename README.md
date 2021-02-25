@@ -58,5 +58,3 @@ end
 - Vagos Interior - https://github.com/TRANEdAK1nG/Vagos-Interior
 - Marabunta Interior - https://github.com/TRANEdAK1nG/Marabunta-Interior
 - Warmenu - https://github.com/warxander/warmenu
-- Script Author : SBRULEZ#6969
-- Modifications by: Mojito#4595 and Toddyym#8296

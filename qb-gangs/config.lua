@@ -11,50 +11,102 @@ Keys = {
 
 Config = Config or {}
 
--- Config --
-
-Config.gang = "ballas"
-Config.stashname = "ballastash" --Always Keep It Like vagostash,gsfstash,mafiastash
-
 Config.Locations = {
-    ["ogcarspawnballas"] = {
-        label = "Car Spawn",
-        coords = {x =89.04, y =-1967.09, z =20.75, h =324.12},
+    ["ballas"] = {
+        ["VehicleSpawner"] = {
+            label = "Car Spawn",
+            coords = {x =89.04, y =-1967.09, z =20.75, h =324.12},
+            ["colours"] = {
+                ["primary"] = {
+                    r = 108,
+                    g = 11, 
+                    b = 184
+                },
+                ["secondary"] = { 
+                    r = 108,
+                    b = 11, 
+                    g = 18
+                },
+            } 
+        },
+        ["Stash"] = {
+            label = "Ballas Stash",
+            coords = {x =113.3059, y =-1970.89, z =21.3276},
+        }
     },
-    ["stashballas"] = {
-        label = "Ballas Stash",
-        coords = {x =113.3059, y =-1970.89, z =21.3276},
+    ["families"] = {
+        ["VehicleSpawner"] = {
+            label = "Car Spawn",
+            coords = {x =-108.24, y =-1597.97, z =31.65, h =322.23},
+            ["colours"] = {
+                ["primary"] = {
+                    r = 0,
+                    g = 50, 
+                    b = 0
+                },
+                ["secondary"] = { 
+                    r = 0,
+                    b = 0, 
+                    g = 0
+                },
+            } 
+        },
+        ["Stash"] = {
+            label = "Families Stash",
+            coords = {x =-136.91, y =-1609.84, z =35.03, h =66.89},
+        },
     },
-    ["ogcarspawnTheFamily"] = {
-        label = "Car Spawn",
-        coords = {x =-108.24, y =-1597.97, z =31.65, h =322.23},
+    ["marabunta"] = {
+        ["VehicleSpawner"] = {
+            label = "Car Spawn",
+            coords = {x =1421.77, y =-1506.75, z =60.9, h =170.31},
+            ["colours"] = {
+                ["primary"] = {
+                    r = 0,
+                    g = 65, 
+                    b = 188
+                },
+                ["secondary"] = { 
+                    r = 0,
+                    b = 65, 
+                    g = 188
+                }
+            }
+        },
+        ["Stash"] = {
+            label = "Marabunta Stash",
+            coords = {x =1438.95, y =-1489.91, z =66.62, h =151.24},
+            
+        },
     },
-    ["stashthefamily"] = {
-        label = "Family Stash",
-        coords = {x =-136.91, y =-1609.84, z =35.03, h =66.89},
-    },
-    ["ogcarspawnMarabunta"] = {
-        label = "Car Spawn",
-        coords = {x =1421.77, y =-1506.75, z =60.9, h =170.31},
-    },
-    ["stashMarabunta"] = {
-        label = "Marabunta Stash",
-        coords = {x =1438.95, y =-1489.91, z =66.62, h =151.24},
-    },
-    ["ogcarspawnVagos"] = {
-        label = "Car Spawn",
-        coords = {x =335.98, y =-2040.44, z =21.14, h =53.29},
-    },
-    ["stashVagos"] = {
-        label = "Vagos Stash",
-        coords = {x =344.67, y =-2022.14, z =22.39, h =318.46},
-    },
+    ["vagos"] = {
+        ["VehicleSpawner"] = {
+            label = "Car Spawn",
+            coords = {x =335.98, y =-2040.44, z =21.14, h =53.29},
+            ["colours"] = {
+                ["primary"] = {
+                    r = 179,
+                    g = 176, 
+                    b = 37
+                },
+                ["secondary"] = { 
+                    r = 0,
+                    b = 0, 
+                    g = 0
+                }
+            }
+        },
+        ["Stash"] = {
+            label = "Vagos Stash",
+            coords = {x =344.67, y =-2022.14, z =22.39, h =318.46},
+        },
+    }
 }
 
+-- Each gang shares the same list of cars, each with a different colour
 Config.Vehicles = {
     ["buffalo2"] = "Buffalo Sport",
     ["rumpo3"] = "RumpoXL",
     ["manchez"] = "Manchez",
     ["chino2"] = "Lowrider",
-
 }
