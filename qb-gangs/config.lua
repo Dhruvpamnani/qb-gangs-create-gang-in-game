@@ -11,8 +11,7 @@ Keys = {
 
 Config = Config or {}
 
--- Index of this array is the PlayerGang.name
-Config.Locations = {
+Config.Gangs = {
     ["ballas"] = {
         ["VehicleSpawner"] = {
             label = "Car Spawn",
@@ -28,7 +27,13 @@ Config.Locations = {
                     b = 11, 
                     g = 18
                 },
-            } 
+            },
+            ["vehicles"] = {
+                ["buffalo2"] = "Buffalo Sport",
+                ["rumpo3"] = "RumpoXL",
+                ["manchez"] = "Manchez",
+                ["chino2"] = "Lowrider",
+            }
         },
         ["Stash"] = {
             label = "Ballas Stash",
@@ -50,6 +55,12 @@ Config.Locations = {
                     b = 0, 
                     g = 0
                 },
+            },
+            ["vehicles"] = {
+                ["buffalo2"] = "Buffalo Sport",
+                ["rumpo3"] = "RumpoXL",
+                ["manchez"] = "Manchez",
+                ["chino2"] = "Lowrider",
             } 
         },
         ["Stash"] = {
@@ -72,6 +83,12 @@ Config.Locations = {
                     b = 65, 
                     g = 188
                 }
+            },
+            ["vehicles"] = {
+                ["buffalo2"] = "Buffalo Sport",
+                ["rumpo3"] = "RumpoXL",
+                ["manchez"] = "Manchez",
+                ["chino2"] = "Lowrider",
             }
         },
         ["Stash"] = {
@@ -95,6 +112,12 @@ Config.Locations = {
                     b = 0, 
                     g = 0
                 }
+            },
+            ["vehicles"] = {
+                ["buffalo2"] = "Buffalo Sport",
+                ["rumpo3"] = "RumpoXL",
+                ["manchez"] = "Manchez",
+                ["chino2"] = "Lowrider",
             }
         },
         ["Stash"] = {
@@ -102,12 +125,4 @@ Config.Locations = {
             coords = {x =344.67, y =-2022.14, z =22.39, h =318.46},
         },
     }
-}
-
--- Each gang shares the same list of cars, each with a different colour
-Config.Vehicles = {
-    ["buffalo2"] = "Buffalo Sport",
-    ["rumpo3"] = "RumpoXL",
-    ["manchez"] = "Manchez",
-    ["chino2"] = "Lowrider",
 }

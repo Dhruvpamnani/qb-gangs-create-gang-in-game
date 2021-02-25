@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
-            v = Config.Locations[PlayerGang.name]["Stash"]
+            v = Config.Gangs[PlayerGang.name]["Stash"]
 
             ped = PlayerPedId()
             pos = GetEntityCoords(ped)
@@ -61,7 +61,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
-            v = Config.Locations[PlayerGang.name]["VehicleSpawner"]
+            v = Config.Gangs[PlayerGang.name]["VehicleSpawner"]
             ped = PlayerPedId()
             pos = GetEntityCoords(ped)
 
@@ -121,8 +121,9 @@ end
 function VehicleList(isDown)
     MenuTitle = "Vehicle:"
     ClearMenu()
-    for k, v in pairs(Config.Vehicles) do
-        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", k, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
+    Vehicles = Config.Gangs[PlayerGang.name]["VehicleSpawner"]["vehicles"]
+    for k, v in pairs(Vehicles) do
+        Menu.addButton(Vehicles[k], "TakeOutVehicle", k, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
     end
         
     Menu.addButton("Return", "GangGarage",nil)
@@ -130,7 +131,7 @@ end
 
 function TakeOutVehicle(vehicleInfo)
     QBCore.Functions.SpawnVehicle(vehicleInfo, function(veh)
-        local v = Config.Locations[PlayerGang.name]["VehicleSpawner"]
+        local v = Config.Gangs[PlayerGang.name]["VehicleSpawner"]
         local coords = v.coords
         local primary = v["colours"]["primary"]
         local secondary = v["colours"]["secondary"]
