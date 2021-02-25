@@ -3,9 +3,7 @@ Gangs for QB-Core with Gang Support instead of Jobs, supports infinately scaling
 
 # Features:
 
-All Gangs Are Combined in One Script & The Script Is Completely Optimised
-Can Be Easily Converted For Any Framework
-Instructions:
+Each gang has a stash and a list of vehicles they can get out from their garage. Config is fully customisable for each gang.
 
 # Installation
 Add Gangs into qb-core/shared.lua like this:
