@@ -5,27 +5,33 @@ Gangs for QB-Core with Gang Support instead of Jobs, supports infinately scaling
 
 Each gang has a stash and a list of vehicles they can get out from their garage. Config is fully customisable for each gang.
 
+### New Version 2.3 In-Game Gang Configurator
+
+To begin creating a gang use `/creategang [name] [description]` to start the process, use `/placestash` to place the gang stash and `/placegarage` to place the gang garage using the In-Game configurator to chose the gang colours and vehicle list, when you have placed both you can use `/finishgang` to complete it or use `/cancelgang` at any time to abort the process.
+
+![Preview](https://i.imgur.com/vVr0n0W.jpg)
+
 # Installation
 Add Gangs into qb-core/shared.lua like this:
 ```lua
-QBShared.Gangs = {
-	["none"] = {
-		label = "No Gang"
-	},
-	["ballas"] = {
-		label = "Ballas"
-	},
-	["thefamily"] = {
-		label = "The Family"
-	},
-	["vagos"] = {
-		label = "Vagos"
-	},
-	["marabunta"] = {
-		label = "marabunta"
-	},
-}
+QBShared.Gangs = json.decode(LoadResourceFile("qb-gangs", "gangs.json"))
 
+```
+Add event to qb-core/server/events.lua
+```lua
+RegisterServerEvent("QBCore:Server:UpdateGangs")
+AddEventHandler("QBCore:Server:UpdateGangs", function(gangs)
+	QBShared.Gangs = gangs
+	QBCore.Shared.Gangs = gangs
+end)
+```
+Add event to qb-core/client/events.lua
+```lua
+RegisterNetEvent("QBCore:Server:UpdateGangs")
+AddEventHandler("QBCore:Server:UpdateGangs", function(gangs)
+	QBShared.Gangs = gangs
+	QBCore.Shared.Gangs = gangs
+end)
 ```
 
 To enable lockable doors for gangs, you need to modify qb-doorlocks/client/main.lua line 217 like this:
