@@ -1,14 +1,13 @@
 fx_version 'cerulean'
 game 'gta5'
 
-version '2.2'
+version '2.3'
 
 author 'Mojito-Fivem'
 
 client_scripts {
 	'client/main.lua',
 	'client/gui.lua',
-	-- Experimental Creation Feature
 	'client/creation.lua'
 }
 
