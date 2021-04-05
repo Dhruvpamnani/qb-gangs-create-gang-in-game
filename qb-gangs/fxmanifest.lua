@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-version '2.3'
+version '2.4'
 
 author 'Mojito-Fivem'
 
@@ -12,6 +12,7 @@ client_scripts {
 }
 
 server_scripts {
+	'server/config.lua/',
 	'server/main.lua',
 	'server/version.lua'
 }
