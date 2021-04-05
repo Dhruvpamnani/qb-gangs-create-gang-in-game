@@ -54,6 +54,29 @@ function IsAuthorized(doorID)
 	return false
 end
 ```
+Add Citizenids for gang leaders for each gang into server/config.lua like this:
+```lua
+Config = {
+	["GangLeaders"] = {
+		["ballas"] = {
+			"ORJ52463",
+			"ABC12345"
+		},
+		["marabunta"] = {
+
+		},
+		["vagos"] = {
+
+		},
+		["families"] = {
+			
+		},
+		["lost"] = {
+
+		}
+	}
+}
+```
 
 # Interiors used:
 
