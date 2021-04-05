@@ -1,10 +1,20 @@
 QBCore = nil
+Config = {}
 
 Citizen.CreateThread(function()
     while QBCore == nil do
         TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)
         Citizen.Wait(100) 
     end
+
+    QBCore.Functions.TriggerCallback("qb-gangs:server:FetchConfig", function(gangs)
+        Config.Gangs = gangs
+    end)
+end)
+
+RegisterNetEvent("qb-gangs:client:UpdateGangs")
+AddEventHandler("qb-gangs:client:UpdateGangs", function(gangs)
+    Config.Gangs = gangs
 end)
 
 isLoggedIn = false
