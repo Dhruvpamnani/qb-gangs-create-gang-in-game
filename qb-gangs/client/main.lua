@@ -43,24 +43,26 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
-            v = Config.Gangs[PlayerGang.name]["Stash"]
+        	if Config.Gangs[PlayerGang.name] ~= nil then
+	            v = Config.Gangs[PlayerGang.name]["Stash"]
 
-            ped = PlayerPedId()
-            pos = GetEntityCoords(ped)
+	            ped = PlayerPedId()
+	            pos = GetEntityCoords(ped)
 
-            stashdist = #(pos - vector3(v["coords"].x, v["coords"].y, v["coords"].z))
-            if stashdist < 5.0 then
-                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
-                if stashdist < 1.5 then
-                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Stash")
-                    currentAction = "stash"
-                elseif stashdist < 2.0 then
-                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Stash")
-                    currentAction = "none"
-                end
-            else
-                Citizen.Wait(1000)
-            end
+	            stashdist = #(pos - vector3(v["coords"].x, v["coords"].y, v["coords"].z))
+	            if stashdist < 5.0 then
+	                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
+	                if stashdist < 1.5 then
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Stash")
+	                    currentAction = "stash"
+	                elseif stashdist < 2.0 then
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Stash")
+	                    currentAction = "none"
+	                end
+	            else
+	                Citizen.Wait(1000)
+	            end
+	        end
         else
             Citizen.Wait(2500)
         end
@@ -71,27 +73,28 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
-            v = Config.Gangs[PlayerGang.name]["VehicleSpawner"]
-            ped = PlayerPedId()
-            pos = GetEntityCoords(ped)
+        	if Config.Gangs[PlayerGang.name] ~= nil then
+	            v = Config.Gangs[PlayerGang.name]["VehicleSpawner"]
+	            ped = PlayerPedId()
+	            pos = GetEntityCoords(ped)
 
-            vehdist = #(pos - vector3(v["coords"].x, v["coords"].y, v["coords"].z))
+	            vehdist = #(pos - vector3(v["coords"].x, v["coords"].y, v["coords"].z))
 
-            if vehdist < 5.0 then
-                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
-                if vehdist < 1.5 then
-                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Garage")
-                    currentAction = "garage"
-                elseif vehdist < 2.0 then
-                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Garage")
-                    currentAction = "none"
-                end
-                
-                Menu.renderGUI()
-            else
-                Citizen.Wait(1000)
-            end
-
+	            if vehdist < 5.0 then
+	                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
+	                if vehdist < 1.5 then
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Garage")
+	                    currentAction = "garage"
+	                elseif vehdist < 2.0 then
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Garage")
+	                    currentAction = "none"
+	                end
+	                
+	                Menu.renderGUI()
+	            else
+	                Citizen.Wait(1000)
+	            end
+	        end
         else
             Citizen.Wait(2500)
         end
