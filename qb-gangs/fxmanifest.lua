@@ -12,7 +12,7 @@ client_scripts {
 }
 
 server_scripts {
-	'server/config.lua/',
+	'server/config.lua',
 	'server/main.lua',
 	'server/version.lua'
 }
