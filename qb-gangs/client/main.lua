@@ -18,12 +18,14 @@ AddEventHandler("qb-gangs:client:UpdateGangs", function(gangs)
 end)
 
 isLoggedIn = false
-local PlayerGang = {}
+PlayerGang = {}
+PlayerJob = {}
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     isLoggedIn = true
     PlayerGang = QBCore.Functions.GetPlayerData().gang
+    PlayerJob = QBCore.Functions.GetPlayerData().job
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload')
@@ -34,6 +36,12 @@ end)
 RegisterNetEvent('QBCore:Client:OnGangUpdate')
 AddEventHandler('QBCore:Client:OnGangUpdate', function(GangInfo)
     PlayerGang = GangInfo
+    isLoggedIn = true
+end)
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnGangUpdate', function(JobInfo)
+    PlayerJob = JobInfo
     isLoggedIn = true
 end)
 

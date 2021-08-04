@@ -66,7 +66,30 @@ $(function () {
       $("#secondary").css("background-color", event.color.toString());
     });
 
+    const Hide = () => {
+      $("#gang-info").css("display", "none");
+    }
+
+    const ShowGang = (e) => {
+      $("#gang-info").css("display", "block");
+      $(".winner").html(e.data.winner);
+
+      console.log(e.data.status)
+
+      if (e.data.status === "contested") {
+        $(".capturing").html(`Contested`)
+      } else {
+        if (e.data.score < e.max && e.data.winner !== e.gang) {
+          $(".capturing").html(`${ Math.round( (e.data.score / e.max) * 100 ) }%`)
+        } else {
+          $(".capturing").html(`Captured`)
+        }
+      }
+    }
+
     window.addEventListener("message", function (event) {
       if (event.data.action == "open") { OpenDialoge() } 
+      else if (event.data.action == "hide") { Hide() }
+      else if (event.data.action == "showgang") { ShowGang(event.data) }
     });
   });

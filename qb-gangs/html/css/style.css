@@ -37,3 +37,19 @@ body {
     border-radius: 10px;
     margin: -5px 0 0 -5px;
   }
+
+#gang-info  {
+  position: absolute;
+  left: 70vh;
+
+  padding: 0.4rem 1rem 1rem 1rem;
+  text-align: center;
+
+  display: none;
+  width: 200px;
+  height: 70px;
+
+  background-color: cornflowerblue;
+  color: white;
+  border-bottom: 4px solid blue
+}
