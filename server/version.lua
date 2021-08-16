@@ -4,7 +4,7 @@ Citizen.CreateThread(
         if vRaw then
             local v = json.decode(vRaw)
             PerformHttpRequest(
-                "https://raw.githubusercontent.com/Mojito-Fivem/qb-gangs/main/qb-gangs/version.json",
+                "https://raw.githubusercontent.com/Mojito-Fivem/qb-gangs/main/version.json",
                 function(code, res, headers)
                     if code == 200 then
                         local rv = json.decode(res)
