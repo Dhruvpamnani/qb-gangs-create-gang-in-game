@@ -23,7 +23,7 @@ Citizen.CreateThread(
                             )
                         end
                     else
-                        print("^1[qb-gangs]:^0 unable to check version")
+                        print("^1[qb-gangs]:^0 Unable to check version. The repository may have been moved, restructured or deleted. Please check github's status if there is a problem.")
                     end
                 end,
                 "GET"
