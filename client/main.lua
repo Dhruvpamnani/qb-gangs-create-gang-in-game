@@ -1,10 +1,10 @@
 QBCore = nil
 Config = {}
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while QBCore == nil do
         TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)
-        Citizen.Wait(100) 
+        Wait(100) 
     end
 
     QBCore.Functions.TriggerCallback("qb-gangs:server:FetchConfig", function(gangs)
@@ -47,9 +47,9 @@ end)
 
 local currentAction = "none"
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
         	if Config.Gangs[PlayerGang.name] ~= nil then
 	            v = Config.Gangs[PlayerGang.name]["Stash"]
@@ -68,18 +68,18 @@ Citizen.CreateThread(function()
 	                    currentAction = "none"
 	                end
 	            else
-	                Citizen.Wait(1000)
+	                Wait(1000)
 	            end
 	        end
         else
-            Citizen.Wait(2500)
+            Wait(2500)
         end
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        Wait(0)
         if isLoggedIn and PlayerGang.name ~= "none" then
         	if Config.Gangs[PlayerGang.name] ~= nil then
 	            v = Config.Gangs[PlayerGang.name]["VehicleSpawner"]
@@ -100,11 +100,11 @@ Citizen.CreateThread(function()
 	                
 	                Menu.renderGUI()
 	            else
-	                Citizen.Wait(1000)
+	                Wait(1000)
 	            end
 	        end
         else
-            Citizen.Wait(2500)
+            Wait(2500)
         end
     end
 end)
