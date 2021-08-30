@@ -2,8 +2,8 @@ local Territories = {}
 local insidePoint = false
 local activeZone = nil
 
-Citizen.CreateThread(function()
-    Citizen.Wait(500)
+CreateThread(function()
+    Wait(500)
     for k, v in pairs(Zones["Territories"]) do
         local zone = CircleZone:Create(v.centre, v.radius, {
             name = "greenzone-"..k,
@@ -30,9 +30,9 @@ AddEventHandler("qb-gangs:client:updateblips", function(zone, winner)
     SetBlipColour(blip, colour)
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do 
-        Citizen.Wait(500)
+        Wait(500)
         if isLoggedIn then
             if PlayerGang.name ~= "none" or PlayerJob.name == "police" then
                 local PlayerPed = PlayerPedId()
@@ -71,19 +71,19 @@ Citizen.CreateThread(function()
 
                                 QBCore.Functions.Notify("You have left a gang territory", "error")
 
-                                Citizen.Wait(1000)
+                                Wait(1000)
 
                                 SendNUIMessage({
                                     action = "hide"
                                 })
                             end
 
-                            Citizen.Wait(1000)
+                            Wait(1000)
                         end
                     end
                 end
             else
-                Citizen.Wait(2000)
+                Wait(2000)
             end
         end
     end
