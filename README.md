@@ -28,6 +28,9 @@ This update brings gang territories to the map using PolyZones and server side c
 
 </details>
 
+# Repository Disclaimer
+Tagged releases are considered 'stable' version of this resource, the master branch and others may contain experimental or unfinished code that you may run into problems with.
+
 # Installation
 Add Gangs into qb-core/shared.lua like this:
 ```lua
